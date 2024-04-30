@@ -12,6 +12,10 @@
 		F295C45B2BDFEC8900E5D2A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */; };
 		F295C45D2BDFEC8A00E5D2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F295C45C2BDFEC8A00E5D2A5 /* Assets.xcassets */; };
 		F295C4602BDFEC8A00E5D2A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F295C45F2BDFEC8A00E5D2A5 /* Preview Assets.xcassets */; };
+		F295C46B2BDFECB400E5D2A5 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C46A2BDFECB400E5D2A5 /* FirstView.swift */; };
+		F295C46D2BDFECBD00E5D2A5 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C46C2BDFECBD00E5D2A5 /* SecondView.swift */; };
+		F295C46F2BDFECCC00E5D2A5 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C46E2BDFECCC00E5D2A5 /* ThirdView.swift */; };
+		F295C4722BDFECF400E5D2A5 /* flush.wav in Resources */ = {isa = PBXBuildFile; fileRef = F295C4712BDFECF400E5D2A5 /* flush.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F295C45C2BDFEC8A00E5D2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F295C45F2BDFEC8A00E5D2A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F295C46A2BDFECB400E5D2A5 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		F295C46C2BDFECBD00E5D2A5 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		F295C46E2BDFECCC00E5D2A5 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		F295C4712BDFECF400E5D2A5 /* flush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flush.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,12 @@
 		F295C4572BDFEC8900E5D2A5 /* Hipup Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				F295C4702BDFECD300E5D2A5 /* Sound */,
 				F295C4582BDFEC8900E5D2A5 /* HipupApp.swift */,
 				F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */,
+				F295C46A2BDFECB400E5D2A5 /* FirstView.swift */,
+				F295C46C2BDFECBD00E5D2A5 /* SecondView.swift */,
+				F295C46E2BDFECCC00E5D2A5 /* ThirdView.swift */,
 				F295C45C2BDFEC8A00E5D2A5 /* Assets.xcassets */,
 				F295C45E2BDFEC8A00E5D2A5 /* Preview Content */,
 			);
@@ -92,6 +104,14 @@
 				F295C45F2BDFEC8A00E5D2A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F295C4702BDFECD300E5D2A5 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F295C4712BDFECF400E5D2A5 /* flush.wav */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F295C4722BDFECF400E5D2A5 /* flush.wav in Resources */,
 				F295C4602BDFEC8A00E5D2A5 /* Preview Assets.xcassets in Resources */,
 				F295C45D2BDFEC8A00E5D2A5 /* Assets.xcassets in Resources */,
 			);
@@ -193,6 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F295C45B2BDFEC8900E5D2A5 /* ContentView.swift in Sources */,
+				F295C46F2BDFECCC00E5D2A5 /* ThirdView.swift in Sources */,
+				F295C46B2BDFECB400E5D2A5 /* FirstView.swift in Sources */,
+				F295C46D2BDFECBD00E5D2A5 /* SecondView.swift in Sources */,
 				F295C4592BDFEC8900E5D2A5 /* HipupApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
