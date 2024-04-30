@@ -20,14 +20,14 @@ struct FirstView: View {
                     EmptyView()
                 }
             }
-            .onTapGesture {
-                self.isSecondViewPresented = true
-            }
+//            .onTapGesture {
+//                self.isSecondViewPresented = true
+//            }
         }
     }
     
     func getItem1() -> [String] {
-        var imagesPath = ["Toilet fix for AE_"]
+        var imagesPath: [String] = []
         for i in 0..<89 {
             imagesPath.append("Toilet fix for AE_\(String(format: "%05d", i))")
         }
