@@ -28,7 +28,7 @@ struct FirstView: View {
     
     func getItem1() -> [String] {
         var imagesPath = ["Toilet fix for AE_"]
-        for i in 0..<390 {
+        for i in 0..<89 {
             imagesPath.append("Toilet fix for AE_\(String(format: "%05d", i))")
         }
         return imagesPath
