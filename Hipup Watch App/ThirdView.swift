@@ -9,6 +9,7 @@ import AVFoundation
 
 struct ThirdView: View {
     @State private var isFirstViewPresented = false
+    @Binding var timer:Timer?
     
     let audioPath = AVPlayer(url: Bundle.main.url(forResource: "flush", withExtension: "wav")!)
     @Environment(\.presentationMode) var presentationMode
@@ -20,16 +21,24 @@ struct ThirdView: View {
             ImageSequenceView3(imageNames3: getItem3())
                 .edgesIgnoringSafeArea(.all)
                 
+            NavigationLink(destination: FirstView().navigationBarBackButtonHidden(true), isActive: $isFirstViewPresented) {
+                EmptyView()
+            }
                 .onTapGesture {
                     self.isFirstViewPresented = true
                 }
-                .fullScreenCover(isPresented: $isFirstViewPresented, content: {
-                    FirstView().navigationBarBackButtonHidden(true)
-                })
+//                .fullScreenCover(isPresented: $isThirdViewPresented, content: {
+//                    ThirdView()
+//                })
         }
         .task {
+            Task {
+                timer?.invalidate()
+            }
             audioPath.play()
         }
+        .navigationBarBackButtonHidden(true)
+        .ignoresSafeArea()
 //        .onAppear {
 //            DispatchQueue.main.asyncAfter(deadline: .now()) {
 //                self.audioPath.play()
@@ -72,6 +81,6 @@ struct ImageSequenceView3: View {
 
 struct ThirdView_Previews: PreviewProvider {
     static var previews: some View {
-        ThirdView()
+        ThirdView(timer: .constant(Timer()))
     }
 }

@@ -19,6 +19,7 @@ struct SecondView: View {
     @State var isHaptic = false
     @State var kondisiNafas: String = "breathin"
     @State var timer: Timer?
+    @State var stop:Bool = false
     
     var body: some View {
         NavigationView {
@@ -26,11 +27,15 @@ struct SecondView: View {
                 ImageSequenceView2(imageNames2: getItem2())
                     .edgesIgnoringSafeArea(.all)
                 
-                NavigationLink(destination: ThirdView().navigationBarBackButtonHidden(true), isActive: $isThirdViewPresented) {
+                NavigationLink(destination: ThirdView(timer: $timer).navigationBarBackButtonHidden(true), isActive: $isThirdViewPresented) {
                     EmptyView()
                 }
             }
             .onTapGesture {
+                print("stop dong")
+                stop = true
+                timer?.invalidate()
+                timer = nil
                 self.isThirdViewPresented = true
             }
         }
@@ -38,7 +43,10 @@ struct SecondView: View {
             startTimer()
         }
         .onDisappear {
+            stop = true
             timer?.invalidate()
+            timer = nil
+            
         }
         .onChange(of: seconds) { oldValue, newValue in
             
@@ -73,9 +81,11 @@ struct SecondView: View {
 //            self.audioPath.volume = 0
 //            audioPath.play()
 //            WKInterfaceDevice.current().play(.start)
-            seconds += 1
+            if !stop {
+                seconds += 1
+            }
         }
-        timer?.fire()
+//        timer?.fire()
     }
     
     func getItem2() -> [String] {

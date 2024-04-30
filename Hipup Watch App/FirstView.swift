@@ -20,9 +20,9 @@ struct FirstView: View {
                     EmptyView()
                 }
             }
-//            .onTapGesture {
-//                self.isSecondViewPresented = true
-//            }
+            .onTapGesture {
+                self.isSecondViewPresented = true
+            }
         }
     }
     
