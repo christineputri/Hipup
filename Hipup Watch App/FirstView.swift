@@ -1,5 +1,5 @@
 //
-//  FirstView.swift
+//  First.swift
 //  Hipup Watch App
 //
 //  Created by Christine Putri on 29/04/24.
@@ -12,38 +12,24 @@ struct FirstView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ZStack {
-                    Image("album")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                    Image("dadu")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                    ImageSequenceView1(imageNames1: getItem1())
-                        .padding()
-                }
+            ZStack {
+                ImageSequenceView1(imageNames1: getItem1())
+                    .edgesIgnoringSafeArea(.all)
                 
-                .onTapGesture {
-                    self.isSecondViewPresented = true
-                }
-                .fullScreenCover(isPresented: $isSecondViewPresented, content: {
-                    SecondView().navigationBarBackButtonHidden(true)
-                })
-                
-                NavigationLink(destination: SecondView().navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: SecondView().navigationBarBackButtonHidden(true), isActive: $isSecondViewPresented) {
                     EmptyView()
                 }
+            }
+            .onTapGesture {
+                self.isSecondViewPresented = true
             }
         }
     }
     
     func getItem1() -> [String] {
-        var imagesPath = ["hipup_pngsequence_page1_"]
-        for i in 0..<3 {
-            imagesPath.append("hipup_pngsequence_page1_\(String(format: "%05d", i))")
+        var imagesPath = ["Toilet fix for AE_"]
+        for i in 0..<390 {
+            imagesPath.append("Toilet fix for AE_\(String(format: "%05d", i))")
         }
         return imagesPath
     }
@@ -56,7 +42,8 @@ struct ImageSequenceView1: View {
     var body: some View {
         Image(imageNames1[currentIndex1])
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 0.033, repeats: true) { timer in
                     currentIndex1 = (currentIndex1 + 1) % imageNames1.count

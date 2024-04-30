@@ -12,32 +12,16 @@ struct SecondView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-//                ImageSequenceView2(imageNames2: getItem2())
-//                    .padding()
-                ZStack {
-//                    Image("langit")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .edgesIgnoringSafeArea(.all)
-//                    Image("rumput")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .edgesIgnoringSafeArea(.all)
-                    ImageSequenceView2(imageNames2: getItem2())
-                        .padding()
-                }
+            ZStack {
+                ImageSequenceView2(imageNames2: getItem2())
+                    .edgesIgnoringSafeArea(.all)
                 
-                .onTapGesture {
-                    self.isThirdViewPresented = true
-                }
-                .fullScreenCover(isPresented: $isThirdViewPresented, content: {
-                    ThirdView().navigationBarBackButtonHidden(true)
-                })
-                
-                NavigationLink(destination: ThirdView().navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: ThirdView().navigationBarBackButtonHidden(true), isActive: $isThirdViewPresented) {
                     EmptyView()
                 }
+            }
+            .onTapGesture {
+                self.isThirdViewPresented = true
             }
         }
     }
@@ -58,7 +42,8 @@ struct ImageSequenceView2: View {
     var body: some View {
         Image(imageNames2[currentIndex2])
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 0.033, repeats: true) { timer in
                     currentIndex2 = (currentIndex2 + 1) % imageNames2.count
