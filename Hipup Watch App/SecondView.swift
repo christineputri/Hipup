@@ -26,10 +26,17 @@ struct SecondView: View {
             ZStack {
                 ImageSequenceView2(imageNames2: getItem2())
                     .edgesIgnoringSafeArea(.all)
-
-                NavigationLink(destination: ThirdView(timer: $timer).navigationBarBackButtonHidden(true), isActive: $isThirdViewPresented) {
-                    EmptyView()
-                }.buttonStyle(PlainButtonStyle()) // Hide the navigation link button
+                
+                //                NavigationLink(destination: ThirdView(timer: $timer).navigationBarBackButtonHidden(true), isActive: $isThirdViewPresented) {
+                //                    EmptyView()
+                //                }.buttonStyle(PlainButtonStyle()) // Hide the navigation link button
+            }
+            .navigationBarHidden(true) // Hide the navigation bar
+            .onTapGesture {
+                self.isThirdViewPresented = true
+            }
+            .sheet(isPresented: $isThirdViewPresented) {
+                ThirdView(timer: $timer)
             }
             .onTapGesture {
                 print("stop dong")
@@ -78,9 +85,9 @@ struct SecondView: View {
 
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-//            self.audioPath.volume = 0
-//            audioPath.play()
-//            WKInterfaceDevice.current().play(.start)
+            self.audioPath.volume = 0
+            audioPath.play()
+            WKInterfaceDevice.current().play(.start)
             if !stop {
                 seconds += 1
             }

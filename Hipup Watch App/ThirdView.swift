@@ -17,20 +17,33 @@ struct ThirdView: View {
     @StateObject var audioPlayer = AudioPlayer()
 
     var body: some View {
-        ZStack {
-            ImageSequenceView3(imageNames3: getItem3())
-                .edgesIgnoringSafeArea(.all)
-
-            NavigationLink(destination: FirstView().navigationBarBackButtonHidden(true), isActive: $isFirstViewPresented) {
-                EmptyView()
-            }.buttonStyle(PlainButtonStyle()) // Hide the navigation link button
-                .onTapGesture {
-                    self.isFirstViewPresented = true
-                }
-//                .fullScreenCover(isPresented: $isThirdViewPresented, content: {
-//                    ThirdView()
-//                })
+        NavigationView{
+            ZStack {
+                ImageSequenceView3(imageNames3: getItem3())
+                    .edgesIgnoringSafeArea(.all)
+                
+                //            NavigationLink(destination: FirstView().navigationBarBackButtonHidden(true), isActive: $isFirstViewPresented) {
+                //                EmptyView()
+                //            }.buttonStyle(PlainButtonStyle()) // Hide the navigation link button
+                //                .onTapGesture {
+                //                    self.isFirstViewPresented = true
+                //                }
+                //
+                
+                
+                //                .fullScreenCover(isPresented: $isThirdViewPresented, content: {
+                //                    ThirdView()
+                //                })
+            }
+            .navigationBarHidden(true) // Hide the navigation bar
+            .onTapGesture {
+                self.isFirstViewPresented = true
+            }
+            .sheet(isPresented: $isFirstViewPresented) {
+                FirstView()
+            }
         }
+            
         .task {
             Task {
                 timer?.invalidate()
