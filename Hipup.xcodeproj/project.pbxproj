@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F295C4542BDFEC8900E5D2A5 /* Hipup Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F295C4532BDFEC8900E5D2A5 /* Hipup Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F295C4592BDFEC8900E5D2A5 /* HipupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C4582BDFEC8900E5D2A5 /* HipupApp.swift */; };
-		F295C45B2BDFEC8900E5D2A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */; };
 		F295C45D2BDFEC8A00E5D2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F295C45C2BDFEC8A00E5D2A5 /* Assets.xcassets */; };
 		F295C4602BDFEC8A00E5D2A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F295C45F2BDFEC8A00E5D2A5 /* Preview Assets.xcassets */; };
 		F295C46B2BDFECB400E5D2A5 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F295C46A2BDFECB400E5D2A5 /* FirstView.swift */; };
@@ -46,7 +45,6 @@
 		F295C44D2BDFEC8900E5D2A5 /* Hipup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F295C4532BDFEC8900E5D2A5 /* Hipup Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hipup Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F295C4582BDFEC8900E5D2A5 /* HipupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipupApp.swift; sourceTree = "<group>"; };
-		F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F295C45C2BDFEC8A00E5D2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F295C45F2BDFEC8A00E5D2A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F295C46A2BDFECB400E5D2A5 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			children = (
 				F295C4702BDFECD300E5D2A5 /* Sound */,
 				F295C4582BDFEC8900E5D2A5 /* HipupApp.swift */,
-				F295C45A2BDFEC8900E5D2A5 /* ContentView.swift */,
 				F295C46A2BDFECB400E5D2A5 /* FirstView.swift */,
 				F295C46C2BDFECBD00E5D2A5 /* SecondView.swift */,
 				F295C46E2BDFECCC00E5D2A5 /* ThirdView.swift */,
@@ -213,7 +210,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F295C45B2BDFEC8900E5D2A5 /* ContentView.swift in Sources */,
 				F295C46F2BDFECCC00E5D2A5 /* ThirdView.swift in Sources */,
 				F295C46B2BDFECB400E5D2A5 /* FirstView.swift in Sources */,
 				F295C46D2BDFECBD00E5D2A5 /* SecondView.swift in Sources */,
